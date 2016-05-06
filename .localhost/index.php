@@ -1,6 +1,6 @@
 <?php
 
-define( 'HOME_URL',   'http://localhost/localhost-looking-good' );
+define( 'HOME_URL',   'http://localhost' );
 define( 'HOME_DIR',   '/var/www' ); // directory of the projects
 define( 'APACHE_DIR', '/etc/apache2' );
 
