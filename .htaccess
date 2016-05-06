@@ -1,1 +1,1 @@
-DirectoryIndex .localhost/index.php
+DirectoryIndex .localhost/index.php index.php index.html index.cgi index.pl index.xhtml index.htm
