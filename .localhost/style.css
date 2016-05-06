@@ -1,0 +1,117 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #f1f1f1;
+	color: #444;
+	font-family: sans-serif;
+}
+
+a {
+	color: #17BBB0;
+	text-decoration: none;
+	transition: all 0.12s ease;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 20px;
+	max-width: 840px;
+}
+
+.column {
+	box-sizing: border-box;
+	float: left;
+	margin-top: 10px;
+	padding: 20px;
+	width: 50%;
+}
+
+/* clearfix */
+.navbar:after,
+.panel:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/*
+ * NAVBAR
+ */
+.navbar {
+	display: block;
+	background-color: #17BBB0;
+}
+
+.navbar a {
+	display: inline-block;
+	padding: 20px;
+	color: rgba(255,255,255,0.6);
+	font-size: 18px;
+}
+
+.navbar a:hover { color: #fff; }
+
+/* branding */
+.navbar .branding {
+	float: left;
+	text-transform: uppercase;
+}
+
+.navbar .branding h1 { margin: 0; }
+
+/* menu */
+.navbar .menu { float: right; }
+
+.navbar .menu li {
+	display: inline-block;
+	list-style: none;
+	vertical-align: top;
+}
+
+.navbar .github-link { padding: 13px 20px; }
+
+/*
+ * PANELS
+ */
+.panel {
+	display: block;
+	background-color: #fff;
+	box-shadow: 0 2px 1px 1px rgba(0,0,0,0.05);
+}
+
+.panel .panel-heading { padding: 30px; }
+
+.list-group-item {
+	position: relative;
+	display: block;
+	padding: 20px 60px 20px 30px;
+	border-top: 1px solid rgba(0,0,0,0.1);
+	border-radius: 3px;
+}
+
+.list-group-item:hover {
+	background-color: rgba(0,0,0,0.05);
+	border-top-color: rgba(0,0,0,0.05);
+}
+
+.list-group-item p {
+	margin-top: 6px;
+	color: #ACBAC9;
+	/*opacity: 0.6;*/
+}
+
+.list-group-item .label {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	width: 20px;
+	height: 20px;
+	background-color: #C5D3E2;
+	border-radius: 3px;
+}
+
+.list-group-item .label-success { background-color: #2ECC71; }
+.list-group-item .label-danger { background-color: #E74C3C; }
