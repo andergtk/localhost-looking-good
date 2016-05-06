@@ -16,7 +16,7 @@ If needed, change the value of the constants in the file `.localhost/index.php` 
 
 Remove the `README.md` and `LICENSE` files if you want, to let the cleanest folder
 
-#### It's Done
+### It's Done
 
 ## Informations
 
