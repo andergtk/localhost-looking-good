@@ -1,16 +1,19 @@
 # Localhost Looking Good
+
 Localhost with a looking good and showing the status of the Virtual Hosts.
-<<<<<<< HEAD
+
+![](http://i.imgur.com/a9pC5hC.png)
 
 ## Quick Start
-**Clone the project** to your localhost directory, e.g:
 
->git clone https://github.com/andergtk/localhost-looking-good.git /var/www
+Clone the project to your localhost root directory:
 
-and...
+```bash
+git clone https://github.com/andergtk/localhost-looking-good.git /var/www
+```
 
-#### It's Done!
+If needed, change the value of the constants in the file `.localhost/index.php` to the correct paths.
 
-## Screenshots
-=======
->>>>>>> 36052acccf72cd4d4fa524d247823550243b925b
+Remove the `README.md` and `LICENSE` files if you want, to let the cleanest folder
+
+### It's Done
