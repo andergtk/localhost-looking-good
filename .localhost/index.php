@@ -1,45 +1,43 @@
 <?php
 
-define( 'HOME_URL',   'http://localhost' );
+/** Change it if needed */
+define( 'HOME_URL',   'http://' . $_SERVER['HTTP_HOST'] );
 define( 'HOME_DIR',   '/var/www' ); // directory of the projects
 define( 'APACHE_DIR', '/etc/apache2' );
 
 $projects        = array();
 $sites_availalbe = array();
 $sites_enabled   = array();
+
+/** Add here the name of the virtual hosts files to be ignored */
 $sites_ignore    = array(
 	'000-default.conf',
 	'default-ssl.conf',
 	'www.conf'
 );
 
-$pattern = '/^\./'; // used to ignore hidden things
+/** Used to ignore hidden things */
+$pattern = '/^\./';
 
-// stores the folder name of the projects
+/** Stores the folder name of the projects */
 $dir = opendir( HOME_DIR );
-
 while ( $folder_name = readdir( $dir ) )
 	if ( ! preg_match( $pattern, $folder_name ) )
 		$projects[] = $folder_name;
-
 closedir( $dir );
 
-// stores the sites available
+/** Stores the sites available */
 $dir = opendir( APACHE_DIR . '/sites-available' );
-
 while ( $conf_file = readdir( $dir ) )
 	if ( ! preg_match( $pattern, $conf_file ) && ! in_array( $conf_file, $sites_ignore ) )
 		$sites_availalbe[] = $conf_file;
-
 closedir( $dir );
 
-// stores the sites enabled
+/** Stores the sites enabled */
 $dir = opendir( APACHE_DIR . '/sites-enabled' );
-
 while ( $conf_file = readdir( $dir ) )
 	if ( ! preg_match( $pattern, $conf_file ) )
 		$sites_enabled[] = $conf_file;
-
 closedir( $dir );
 
 ?>
@@ -100,28 +98,29 @@ closedir( $dir );
 							<?php foreach ( $sites_availalbe as $site ) : ?>
 								<?php
 
+								/** Reads entire file into an array */
 								$file = file( APACHE_DIR . "/sites-available/{$site}" );
-
 								foreach ( $file as $line ) {
-									preg_match( '/ServerName\s+(.*)\n/', $line, $server_name);
 
+									/** Search for the line with the ServerName */
+									preg_match( '/ServerName\s+(.*)\n/', $line, $server_name);
 									if ( isset( $server_name[1] ) ) {
 										$url = "http://{$server_name[1]}";
 										break;
-									} else {
-										$url = HOME_URL . "/{$site}";
 									}
 								}
 
-								$label = ( in_array( $site, $sites_enabled ) ) ? 'success' : 'danger';
+								if ( ! isset( $url ) )
+									$url = HOME_URL . "/{$site}";
+
+								$label_type = ( in_array( $site, $sites_enabled ) ) ? 'success' : 'danger';
 
 								?>
 								<a class="list-group-item" href="<?php echo $url; ?>">
 									<h4><?php echo $site; ?></h4>
-									<span class="label label-<?php echo $label; ?>"></span>
+									<span class="label <?php echo "label-{$label_type}"; ?>"></span>
 									<p><?php echo $url; ?></p>
 								</a><!-- .list-group-item -->
-
 							<?php endforeach; ?>
 						</div><!-- .list-group -->
 					</div><!-- .panel-body -->
