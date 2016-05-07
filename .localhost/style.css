@@ -25,19 +25,20 @@ a {
 	box-sizing: border-box;
 	float: left;
 	margin-top: 10px;
-	padding: 20px;
+	padding: 20px 20px 0;
 	width: 50%;
 }
 
 /* clearfix */
 .navbar:after,
 .panel:after {
-	content: "";
+	content: " ";
 	display: table;
+	font-size: 0;
 	clear: both;
 }
 
-/*
+/**
  * NAVBAR
  */
 .navbar {
@@ -73,7 +74,7 @@ a {
 
 .navbar .github-link { padding: 13px 20px; }
 
-/*
+/**
  * PANELS
  */
 .panel {
@@ -100,7 +101,6 @@ a {
 .list-group-item p {
 	margin-top: 6px;
 	color: #ACBAC9;
-	/*opacity: 0.6;*/
 }
 
 .list-group-item .label {
@@ -110,8 +110,15 @@ a {
 	width: 20px;
 	height: 20px;
 	background-color: #C5D3E2;
-	border-radius: 3px;
+	border-radius: 2px;
 }
 
 .list-group-item .label-success { background-color: #2ECC71; }
 .list-group-item .label-danger { background-color: #E74C3C; }
+
+/**
+ * MEDIA QUERIES
+ */
+@media ( max-width: 740px ) {
+	.column { width: 100%; }
+}
