@@ -1,3 +1,6 @@
+/**
+ * GENERAL
+ */
 * {
 	margin: 0;
 	padding: 0;
@@ -8,6 +11,8 @@ body {
 	color: #444;
 	font-family: sans-serif;
 }
+
+p { color: #ACBAC9; }
 
 a {
 	color: #17BBB0;
@@ -37,6 +42,7 @@ a {
 	font-size: 0;
 	clear: both;
 }
+
 
 /**
  * NAVBAR
@@ -74,6 +80,7 @@ a {
 
 .navbar .github-link { padding: 13px 20px; }
 
+
 /**
  * PANELS
  */
@@ -90,18 +97,14 @@ a {
 	display: block;
 	padding: 20px 60px 20px 30px;
 	border-top: 1px solid rgba(0,0,0,0.1);
-	border-radius: 3px;
 }
 
-.list-group-item:hover {
+a.list-group-item:hover {
 	background-color: rgba(0,0,0,0.05);
 	border-top-color: rgba(0,0,0,0.05);
 }
 
-.list-group-item p {
-	margin-top: 6px;
-	color: #ACBAC9;
-}
+a.list-group-item p { margin-top: 6px; }
 
 .list-group-item .label {
 	position: absolute;
@@ -115,6 +118,7 @@ a {
 
 .list-group-item .label-success { background-color: #2ECC71; }
 .list-group-item .label-danger { background-color: #E74C3C; }
+
 
 /**
  * MEDIA QUERIES
