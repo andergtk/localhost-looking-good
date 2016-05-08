@@ -1,12 +1,14 @@
 # Localhost Looking Good
 
-Localhost with a looking good and showing the status of the Virtual Hosts.
-
 ![](http://i.imgur.com/3OBpiSb.png)
 
-## Installation
+Localhost with a looking good and showing the status of the Virtual Hosts.
 
-Clone the repository to your localhost root directory:
+## Installing
+
+Requires apache installed.
+
+Clone the repository into localhost root directory:
 
 ```bash
 git clone https://github.com/andergtk/localhost-looking-good.git /var/www
@@ -14,12 +16,17 @@ git clone https://github.com/andergtk/localhost-looking-good.git /var/www
 
 Make sure that the directory is empty.
 
-Remove the `README.md` and `LICENSE` files if you want, to let the cleanest folder.
+Or [download a zip](https://github.com/andergtk/localhost-looking-good/archive/master.zip).
 
-Or [download](https://github.com/andergtk/localhost-looking-good/archive/master.zip) the repository and copy the `.htaccess` file and `.localhost/` directory into your localhost root folder.
+## Setup
 
-If needed, change the value of the constants in the file `.localhost/index.php` to the correct paths.
+The only file that you need change something is in `.localhost/index.php`.
 
-## Informations
+If you have installed Apache in another directory (not in `/etc/apache2`) you should change the value of the constant `APACHE_DIR` to the correct path.
 
-+ Works just with apache, but you can help me to give support for nginx :)
+You can change the projects directory too in the constant `HOME_DIR`, that is where are the files of your sites.
+
+## Contributing
+
+Any suggestions of correction, improvement or translation (yeah, I'm BR) are wellcome.
+
