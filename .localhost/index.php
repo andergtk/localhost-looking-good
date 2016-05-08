@@ -5,7 +5,6 @@ define( 'HOME_URL',   'http://' . $_SERVER['HTTP_HOST'] );
 define( 'HOME_DIR',   '/var/www' ); // projects directory
 define( 'APACHE_DIR', '/etc/apache2' );
 
-
 /** Add here the name of the virtual hosts files to be ignored */
 $sites_ignore    = array(
 	'000-default.conf',
@@ -16,10 +15,8 @@ $projects        = array();
 $sites_available = array();
 $sites_enabled   = array();
 
-
 /** To ignore hidden things */
 $pattern = '/^\./';
-
 
 /** Stores the folder name of the projects */
 $dir = opendir( HOME_DIR );
@@ -28,14 +25,12 @@ while ( $folder_name = readdir( $dir ) )
 		$projects[] = $folder_name;
 closedir( $dir );
 
-
 /** Stores the sites available */
 $dir = opendir( APACHE_DIR . '/sites-available' );
 while ( $conf_file = readdir( $dir ) )
 	if ( ! preg_match( $pattern, $conf_file ) && ! in_array( $conf_file, $sites_ignore ) )
 		$sites_available[] = $conf_file;
 closedir( $dir );
-
 
 /** Stores the sites enabled */
 $dir = opendir( APACHE_DIR . '/sites-enabled' );
@@ -60,7 +55,6 @@ closedir( $dir );
 				<div class="branding">
 					<h1><a href="<?php echo HOME_URL; ?>">Localhost</a></h1>
 				</div><!-- .branding -->
-
 				<ul class="menu">
 					<li><a href="<?php echo HOME_URL . '/phpmyadmin'; ?>">PhpMyAdmin</a></li>
 					<li>
@@ -78,24 +72,17 @@ closedir( $dir );
 					<div class="panel-heading">
 						<h3>Projects</h3>
 					</div><!-- .panel-heading -->
-
 					<div class="panel-body">
 						<div class="list-group">
-
 							<?php if ( empty( $projects ) ) : ?>
-
 								<p class="list-group-item">No Projects</p>
-
 							<?php else : ?>
-
 								<?php foreach ( $projects as $project ) : ?>
 									<a class="list-group-item" href="<?php echo HOME_URL . "/{$project}"; ?>">
 										<h4><?php echo $project; ?></h4>
 									</a>
 								<?php endforeach; ?>
-
 							<?php endif; ?>
-
 						</div><!-- .list-group -->
 					</div><!-- .panel-body -->
 				</div><!-- .panel -->
@@ -106,16 +93,11 @@ closedir( $dir );
 					<div class="panel-heading">
 						<h3>Virtual Hosts</h3>
 					</div><!-- .panel-heading -->
-
 					<div class="panel-body">
 						<div class="list-group">
-
 							<?php if ( empty( $sites_available ) ) : ?>
-
 								<p class="list-group-item">No Virtual Hosts</p>
-
 							<?php else : ?>
-
 								<?php foreach ( $sites_available as $site ) : ?>
 									<?php
 
@@ -145,9 +127,7 @@ closedir( $dir );
 										<p><?php echo $url; ?></p>
 									</a><!-- .list-group-item -->
 								<?php endforeach; ?>
-
 							<?php endif; ?>
-
 						</div><!-- .list-group -->
 					</div><!-- .panel-body -->
 				</div><!-- .panel -->
