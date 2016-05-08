@@ -43,7 +43,6 @@ a {
 	clear: both;
 }
 
-
 /**
  * NAVBAR
  */
@@ -79,7 +78,6 @@ a {
 }
 
 .navbar .github-link { padding: 13px 20px; }
-
 
 /**
  * PANELS
@@ -118,7 +116,6 @@ a.list-group-item p { margin-top: 6px; }
 
 .list-group-item .label-success { background-color: #2ECC71; }
 .list-group-item .label-danger { background-color: #E74C3C; }
-
 
 /**
  * MEDIA QUERIES
