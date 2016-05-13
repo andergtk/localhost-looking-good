@@ -20,6 +20,9 @@ a {
 	transition: all 0.12s ease;
 }
 
+/**
+ * LAYOUT
+ */
 .container {
 	margin: 0 auto;
 	padding: 0 20px;
