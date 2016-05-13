@@ -1,9 +1,9 @@
 <?php
 
 /** Change it if needed */
-define( 'HOME_URL',   'http://' . $_SERVER['HTTP_HOST'] );
-define( 'HOME_DIR',   '/var/www' ); // projects directory
-define( 'APACHE_DIR', '/etc/apache2' );
+define( 'HOME_URL',     'http://' . $_SERVER['HTTP_HOST'] );
+define( 'APACHE_DIR',   '/etc/apache2' );
+define( 'PROJECTS_DIR', '.' );
 
 /** Add here the name of the virtual hosts files to be ignored */
 $sites_ignore    = array(
