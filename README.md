@@ -24,12 +24,13 @@ The only file that you need change something is in `.localhost/index.php`.
 
 If you have installed Apache in another directory (not in `/etc/apache2`) you should change the value of the constant `APACHE_DIR` to the correct path.
 
-You can change the projects directory in the constant `HOME_DIR`.
+You can change the projects directory in the constant `PROJECTS_DIR`.
 
 ## Contributing
 
-Any suggestions of correction, improvement or translation (yeah, I'm BR) are wellcome.
+Any suggestions of correction or improvement are wellcome.
 
 ## License
 
-The MIT License (MIT)
+The [MIT License](LICENSE).
+
