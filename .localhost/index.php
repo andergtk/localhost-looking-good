@@ -19,7 +19,7 @@ $sites_enabled   = array();
 $pattern = '/^\./';
 
 /** Stores the folder name of the projects */
-$dir = opendir( HOME_DIR );
+$dir = opendir( PROJECTS_DIR );
 while ( $folder_name = readdir( $dir ) )
 	if ( ! preg_match( $pattern, $folder_name ) )
 		$projects[] = $folder_name;
