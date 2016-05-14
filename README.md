@@ -27,7 +27,7 @@ Or [download a zip](https://github.com/andergtk/localhost-looking-good/archive/m
 
 ## Setup
 
-The only file that you need change something is in `.localhost/config.php`.
+The only file that you need change something is `.localhost/config.php`.
 
 If you have installed Apache in another directory (not in `/etc/apache2`) you should change the value of the constant `APACHE_DIR` to the correct path.
 
