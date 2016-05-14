@@ -125,7 +125,7 @@ a {
 	color: #17BBB0;
 }
 
-.list-group-item.is-file { color: #5C6A79; }
+.list-group-item.is-file { color: #ACBAC9; }
 
 a.list-group-item:hover {
 	background-color: rgba(197,211,226,0.3);
@@ -155,6 +155,28 @@ a.list-group-item p { margin-top: 6px; }
 
 .list-group-item .label-success { background-color: #2ECC71; }
 .list-group-item .label-danger { background-color: #E74C3C; }
+
+/**
+ * ERROR PAGE
+ */
+.error-page  {
+	margin: 10% auto 0;
+	padding: 30px;
+	max-width: 1000px;
+}
+
+.error-status,
+.error-title {
+	display: block;
+	margin-top: 30px;
+	color: #C5D3E2;
+	text-align: center;
+	font-weight: bolder;
+}
+
+.error-status { font-size: 160px; }
+
+.error-title { font-size: 40px; }
 
 /**
  * MEDIA QUERIES
