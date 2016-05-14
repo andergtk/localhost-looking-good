@@ -31,7 +31,7 @@ The only file that you need change something is `.localhost/config.php`.
 
 If you have installed Apache in another directory (not in `/etc/apache2`) you should change the value of the constant `APACHE_DIR` to the correct path.
 
-You can add files to be hidden in the display by adding them in `$ignore` array.
+You can add files to be hidden in the localhost page by adding them in `$ignore` array.
 
 ## Contributing
 
