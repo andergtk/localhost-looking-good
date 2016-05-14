@@ -20,6 +20,8 @@ a {
 	transition: all 0.12s ease;
 }
 
+.icon { font-style: normal; }
+
 /**
  * LAYOUT
  */
@@ -91,21 +93,55 @@ a {
 	box-shadow: 0 2px 1px 1px rgba(0,0,0,0.05);
 }
 
-.panel .panel-heading { padding: 30px; }
+.panel-heading {
+	position: relative;
+	padding: 30px;
+}
+
+.panel-heading h3 { display: inline-block; }
+.panel-heading .btn-back + h3 { margin-left: 40px; }
+
+.panel-heading .btn-back:after {
+	content: '\276E';
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	width: 40px;
+	height: 40px;
+	border-radius: 2px;
+	font-size: 1.2em;
+	text-align: center;
+	line-height: 38px;
+	transition: all 0.12s ease;
+}
+
+.panel-heading .btn-back:hover:after { background-color: rgba(197,211,226,0.3); }
 
 .list-group-item {
 	position: relative;
 	display: block;
 	padding: 20px 60px 20px 30px;
-	border-top: 1px solid rgba(0,0,0,0.1);
+	border-top: 1px solid rgba(197,211,226,0.4);
+	color: #17BBB0;
 }
 
+.list-group-item.is-file { color: #5C6A79; }
+
 a.list-group-item:hover {
-	background-color: rgba(0,0,0,0.05);
-	border-top-color: rgba(0,0,0,0.05);
+	background-color: rgba(197,211,226,0.3);
+	border-top-color: rgba(197,211,226,0.1);
 }
 
 a.list-group-item p { margin-top: 6px; }
+
+.list-group-item.is-dir:after {
+	content: '\279C';
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	color: #C5D3E2;
+	font-size: 1.2em;
+}
 
 .list-group-item .label {
 	position: absolute;
@@ -113,7 +149,7 @@ a.list-group-item p { margin-top: 6px; }
 	right: 30px;
 	width: 20px;
 	height: 20px;
-	background-color: #C5D3E2;
+	background-color: #6C7A89;
 	border-radius: 2px;
 }
 
