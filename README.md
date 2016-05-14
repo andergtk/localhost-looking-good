@@ -9,7 +9,7 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 + [x] Display the localhost projects looking good.
 + [x] Show the Virtual Hosts status.
 + [x] Display the subdirectories, that don't have a index file, looking good.
-+ [ ] Display custom error messages.
++ [x] Display custom error messages.
 
 ## Installing
 
