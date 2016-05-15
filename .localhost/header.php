@@ -5,8 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<?php if ( isset( $subdir ) && '/' !== $subdir ) : ?>
 			<title><?php echo ucfirst( basename( $subdir ) ) . ' - Localhost'; ?></title>
-		<?php elseif ( isset( $error ) ) : ?>
-			<title>Error - Localhost</title>
+		<?php elseif ( ! empty( $status ) ) : ?>
+			<title><?php echo "{$status} - Localhost"; ?></title>
 		<?php else : ?>
 			<title>Localhost</title>
 		<?php endif; ?>
