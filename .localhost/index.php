@@ -2,46 +2,72 @@
 
 require_once( 'config.php' );
 
+/**
+ * Initialize variables with an empty array
+ */
 $files           = array();
 $directories     = array();
 $sites_available = array();
 $sites_enabled   = array();
 
-/** Support for subdirectories */
-if ( empty( $_SERVER['REQUEST_URI'] ) )
+/**
+ * Checks whether the request is from a subdirectory
+ */
+if ( empty( $_SERVER['REQUEST_URI'] ) ) {
 	$subdir = '/';
-else
+} else {
 	$subdir = trim( $_SERVER['REQUEST_URI'] );
+}
 
-/** To ignore hidden things */
+/**
+ * Pattern to don't store hidden things
+ */
 $pattern = '/^\./';
 
-/** Stores the name of the files */
-foreach ( glob( PROJECTS_DIR . $subdir . '/*' ) as $file_name )
-	if ( ! in_array( basename( $file_name ), $ignore ) ) {
-		$files[] = basename( $file_name );
-		if ( is_dir( $file_name ) )
-			$directories[] = basename( $file_name ) ;
+/**
+ * Stores the name of the files
+ */
+foreach ( glob( PROJECTS_DIR . $subdir . '*' ) as $file_path ) {
+	$file_name = basename( $file_path );
+	if ( ! in_array( $file_name, $ignore ) ) {
+		if ( is_dir( $file_path ) ) {
+			$directories[] = $file_name;
+		} else {
+			$files[] = $file_name;
+		}
 	}
+}
+
+/** sort and merge them */
+sort( $files );
+sort( $directories );
+$files = array_merge( $directories, $files );
 
 /** Stores the sites available */
-foreach ( glob( APACHE_DIR . '/sites-available/*' ) as $conf_file )
-	if ( ! in_array( basename( $conf_file ), $ignore ) )
-		$sites_available[] = basename( $conf_file );
+foreach ( glob( APACHE_DIR . '/sites-available/*' ) as $conf_file ) {
+	$file_name = basename( $conf_file );
+	if ( ! in_array( $file_name, $ignore ) ) {
+		$sites_available[] = $file_name;
+	}
+}
 
 /** Stores the sites enabled */
-foreach( glob( APACHE_DIR . '/sites-enabled/*' ) as $conf_file )
-	if ( ! in_array( basename( $conf_file ), $ignore ) )
-		$sites_enabled[] = basename( $conf_file );
+foreach( glob( APACHE_DIR . '/sites-enabled/*' ) as $conf_file ) {
+	$file_name = basename( $conf_file );
+	if ( ! in_array( $file_name, $ignore ) ) {
+		$sites_enabled[] = $file_name;
+	}
+}
 
 require_once( 'header.php' );
 
 ?>
+
 <div class="column">
 	<div class="panel">
 		<div class="panel-heading">
 			<?php if ( '/' !== $subdir ) : ?>
-				<a class="btn-back" href="<?php echo HOME_URL . dirname( $subdir ); ?>"></a>
+				<a class="btn-back" href="<?php echo HOME_URL . dirname( $subdir ); ?>" title="Go Back"></a>
 				<h3><?php echo ucfirst( basename( $subdir ) ); ?></h3>
 			<?php else : ?>
 				<h3>Projects</h3>
@@ -50,7 +76,7 @@ require_once( 'header.php' );
 		<div class="panel-body">
 			<div class="list-group">
 				<?php if ( empty( $files ) ) : ?>
-					<p class="list-group-item">No Files</p>
+					<p class="list-group-item empty">No Files</p>
 				<?php else : ?>
 					<?php foreach ( $files as $file ) : ?>
 						<?php if ( in_array( $file, $directories ) ) : ?>
@@ -77,16 +103,20 @@ require_once( 'header.php' );
 		<div class="panel-body">
 			<div class="list-group">
 				<?php if ( empty( $sites_available ) ) : ?>
-					<p class="list-group-item">No Virtual Hosts</p>
+					<p class="list-group-item empty">No Virtual Hosts</p>
 				<?php else : ?>
 					<?php foreach ( $sites_available as $site ) : ?>
 						<?php
 
-						/** Reads entire file into an array */
-						$vh = file( APACHE_DIR . "/sites-available/{$site}" );
-						foreach ( $vh as $line ) {
+						/**
+						 * Reads entire file into an array
+						 */
+						$virtual_host = file( APACHE_DIR . "/sites-available/{$site}" );
+						foreach ( $virtual_host as $line ) {
 
-							/** Search for the line with the ServerName */
+							/**
+							 * Search for the line with the ServerName
+							 */
 							preg_match( '/ServerName\s+(.*)\n/', $line, $server_name);
 							if ( isset( $server_name[1] ) ) {
 								$url = "http://{$server_name[1]}";
@@ -94,11 +124,15 @@ require_once( 'header.php' );
 							}
 						}
 
-						/** If there's no ServerName, set a common URL */
-						if ( ! isset( $url ) )
-							$url = HOME_URL . "/{$site}";
+						/**
+						 * If there is no ServerName, set a common URL
+						 */
+						$url = ( isset( $url ) ) ? $url : HOME_URL . "/{$site}";
 
-						/** Verify if the virtual host configuration is enabled */
+						/**
+						 * Check whether the virtual host is enabled and set set
+						 * a label
+						 */
 						$label_type = ( in_array( $site, $sites_enabled ) ) ? 'success' : 'danger';
 
 						?>
