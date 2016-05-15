@@ -13,8 +13,6 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 
 ## Installing
 
-Requires apache installed and mod_rewrite enabled.
-
 Clone the repository into localhost root directory:
 
 ```bash
@@ -27,11 +25,16 @@ Or [download a zip](https://github.com/andergtk/localhost-looking-good/archive/m
 
 ## Setup
 
+Requires apache installed and mod_rewrite enabled.
+
+If you don't have a Virtual Host configured, see a sample in
+`.localhost/sample-virtualhost.conf`.
+
 The only file that you need change something is `.localhost/config.php`.
 
 If you have installed Apache in another directory (not in `/etc/apache2`) you should change the value of the constant `APACHE_DIR` to the correct path.
 
-You can add files to be hidden in the localhost page by adding them in `$ignore` array.
+You can add files to be ignored in the localhost page by adding them in `$ignore` array.
 
 ## Contributing
 
