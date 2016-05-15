@@ -13,7 +13,7 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 
 ## Installing
 
-Requires apache installed.
+Requires apache installed and mod_rewrite enabled.
 
 Clone the repository into localhost root directory:
 
