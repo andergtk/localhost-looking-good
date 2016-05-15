@@ -38,7 +38,7 @@ You can add files to be ignored in the localhost page by adding them in `$ignore
 
 ## Contributing
 
-Any suggestions of correction or improvement are wellcome.
+Any suggestion or improvement are wellcome.
 
 ## License
 
