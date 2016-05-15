@@ -8,7 +8,5 @@ define( 'PROJECTS_DIR', realpath( '..' ) );
 /** Add here the name of the virtual hosts files to be ignored */
 $ignore    = array(
 	'000-default.conf',
-	'default-ssl.conf',
-	'README.md',
-	'LICENSE'
+	'default-ssl.conf'
 );
