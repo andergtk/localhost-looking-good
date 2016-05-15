@@ -1,7 +1,5 @@
 <?php
 
-require_once( 'config.php' );
-
 $error = array(
 	400 => 'Bad Request',
 	401 => 'Unauthorized',
@@ -24,6 +22,7 @@ $error = array(
 $status  = $_SERVER['REDIRECT_STATUS'];
 $title   = $error[ $status ];
 
+require_once( 'config.php' );
 require_once( 'header.php' );
 
 ?>

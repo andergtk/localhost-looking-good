@@ -15,6 +15,6 @@ ErrorDocument 503 /.localhost/error.php
 ErrorDocument 507 /.localhost/error.php
 ErrorDocument 508 /.localhost/error.php
 
-# for nginx
+# for Nginx
 # ErrorDocument 444 /.localhost/error.php
 # ErrorDocument 499 /.localhost/error.php
