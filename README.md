@@ -28,7 +28,7 @@ Or [download a zip](https://github.com/andergtk/localhost-looking-good/archive/m
 Requires apache installed and mod_rewrite enabled.
 
 If you don't have a Virtual Host configured, see a sample in
-`.localhost/sample-virtualhost.conf`.
+`.localhost/virtualhost-sample.conf`.
 
 The only file that you need change something is `.localhost/config.php`.
 
