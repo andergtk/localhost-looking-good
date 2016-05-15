@@ -28,8 +28,8 @@ require_once( 'header.php' );
 ?>
 
 <div class="error-page">
-	<span class="error-status"><?php echo $status; ?></span>
-	<span class="error-title"><?php echo $title; ?></span>
+	<p class="error-status"><?php echo $status; ?></p>
+	<p class="error-title"><?php echo $title; ?></p>
 </div><!-- .error-page -->
 
 <?php require_once( 'footer.php' ); ?>
