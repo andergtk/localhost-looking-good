@@ -126,8 +126,9 @@ a {
 }
 
 .list-group-item.empty,
-.list-group-item.is-file { color: #8C9AA9; }
+.list-group-item.is-file { color: #9CAAB9; }
 .list-group-item.empty { text-align: center; }
+.list-group-item.is-file h4 { font-weight: normal; }
 
 a.list-group-item:hover {
 	background-color: rgba(197,211,226,0.3);
