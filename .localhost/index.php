@@ -16,7 +16,7 @@ $sites_enabled   = array();
 if ( empty( $_SERVER['REQUEST_URI'] ) ) {
 	$subdir = '/';
 } else {
-	$subdir = trim( $_SERVER['REQUEST_URI'] );
+	$subdir = urldecode( trim( $_SERVER['REQUEST_URI'] ) );
 }
 
 /**
