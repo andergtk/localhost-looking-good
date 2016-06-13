@@ -6,26 +6,25 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 
 ## Features
 
-+ [x] Display the localhost projects looking good.
-+ [x] Show the Virtual Hosts status.
-+ [x] Display the subdirectories, that don't have a index file, looking good.
-+ [x] Display custom error messages.
++ Display the localhost projects looking good.
++ Show the Virtual Hosts status.
++ Display the subdirectories, that don't have a index file, looking good.
++ Display custom error messages.
 
 ## Installing
 
 Clone the repository into localhost root directory:
 
-```bash
-git clone https://github.com/andergtk/localhost-looking-good.git /var/www
-```
+> git clone https://github.com/andergtk/localhost-looking-good.git /var/www
 
 Make sure that the directory is empty.
 
-Or [download a zip](https://github.com/andergtk/localhost-looking-good/archive/master.zip) and extract the files to the same folder.
+Or [download a ZIP](https://github.com/andergtk/localhost-looking-good/archive/master.zip)
+and extract the files to the same folder.
 
 ## Setup
 
-Requires apache installed and mod_rewrite enabled.
+Requires Apache installed and mod_rewrite enabled.
 
 If you don't have a Virtual Host configured, see a sample in
 `.localhost/virtualhost-sample.conf`.
@@ -43,4 +42,3 @@ Any suggestion or improvement are wellcome.
 ## License
 
 The [MIT License](LICENSE).
-
