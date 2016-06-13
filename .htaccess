@@ -1,5 +1,3 @@
-DirectoryIndex index.php index.html index.htm  /.localhost/index.php
-
 ErrorDocument 400 /.localhost/error.php
 ErrorDocument 401 /.localhost/error.php
 ErrorDocument 403 /.localhost/error.php
@@ -15,6 +13,4 @@ ErrorDocument 503 /.localhost/error.php
 ErrorDocument 507 /.localhost/error.php
 ErrorDocument 508 /.localhost/error.php
 
-# for Nginx
-# ErrorDocument 444 /.localhost/error.php
-# ErrorDocument 499 /.localhost/error.php
+DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm /.localhost/index.php

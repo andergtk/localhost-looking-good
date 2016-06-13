@@ -5,10 +5,7 @@ require_once( 'config.php' );
 /**
  * Initialize variables with an empty array
  */
-$files           = array();
-$directories     = array();
-$sites_available = array();
-$sites_enabled   = array();
+$files = $directories = $sites_available = $sites_enabled = array();
 
 /**
  * Checks whether the request is from a subdirectory
@@ -29,6 +26,7 @@ $pattern = '/^\./';
  */
 foreach ( glob( PROJECTS_DIR . $subdir . '*' ) as $file_path ) {
 	$file_name = basename( $file_path );
+
 	if ( ! in_array( $file_name, $ignore ) ) {
 		if ( is_dir( $file_path ) ) {
 			$directories[] = $file_name;
@@ -38,7 +36,7 @@ foreach ( glob( PROJECTS_DIR . $subdir . '*' ) as $file_path ) {
 	}
 }
 
-/** sort and merge them */
+/** Sort and merge them */
 sort( $files );
 sort( $directories );
 $files = array_merge( $directories, $files );
@@ -46,6 +44,7 @@ $files = array_merge( $directories, $files );
 /** Stores the sites available */
 foreach ( glob( APACHE_DIR . '/sites-available/*' ) as $conf_file ) {
 	$file_name = basename( $conf_file );
+
 	if ( ! in_array( $file_name, $ignore ) ) {
 		$sites_available[] = $file_name;
 	}
@@ -54,6 +53,7 @@ foreach ( glob( APACHE_DIR . '/sites-available/*' ) as $conf_file ) {
 /** Stores the sites enabled */
 foreach( glob( APACHE_DIR . '/sites-enabled/*' ) as $conf_file ) {
 	$file_name = basename( $conf_file );
+
 	if ( ! in_array( $file_name, $ignore ) ) {
 		$sites_enabled[] = $file_name;
 	}
@@ -73,6 +73,7 @@ require_once( 'header.php' );
 				<h3>Projects</h3>
 			<?php endif; ?>
 		</div><!-- .panel-heading -->
+
 		<div class="panel-body">
 			<div class="list-group">
 				<?php if ( empty( $files ) ) : ?>
@@ -100,6 +101,7 @@ require_once( 'header.php' );
 		<div class="panel-heading">
 			<h3>Virtual Hosts</h3>
 		</div><!-- .panel-heading -->
+
 		<div class="panel-body">
 			<div class="list-group">
 				<?php if ( empty( $sites_available ) ) : ?>

@@ -16,12 +16,13 @@
 	<body>
 		<nav class="navbar">
 			<div class="container">
-				<div class="branding">
+				<div class="brand">
 					<h1><a href="<?php echo HOME_URL; ?>">Localhost</a></h1>
-				</div><!-- .branding -->
+				</div><!-- .brand -->
+
 				<ul class="menu">
-					<li><a href="<?php echo HOME_URL . '/phpmyadmin'; ?>">PhpMyAdmin</a></li>
-					<li>
+					<li class="menu-item"><a href="<?php echo HOME_URL . '/phpmyadmin'; ?>">PhpMyAdmin</a></li>
+					<li class="menu-item">
 						<a class="github-link" href="https://github.com/andergtk/localhost-looking-good" target="_blank">
 							<img src="<?php echo HOME_URL . '/.localhost/github.png'; ?>" title="See this project on GitHub" alt="GitHub">
 						</a>

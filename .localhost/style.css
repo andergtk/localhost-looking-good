@@ -1,5 +1,5 @@
 /**
- * GENERAL
+ * General
  */
 * {
 	margin: 0;
@@ -17,13 +17,14 @@ p { color: #BCCAD9; }
 a {
 	color: #17BBB0;
 	text-decoration: none;
-	transition: all 0.12s ease;
+	transition: all 0.2s ease;
 }
 
+/** Icons */
 .icon { font-style: normal; }
 
 /**
- * LAYOUT
+ * Layout
  */
 .container {
 	margin: 0 auto;
@@ -39,7 +40,7 @@ a {
 	width: 50%;
 }
 
-/* clearfix */
+/** Clearfix */
 .navbar:after,
 .panel:after {
 	content: " ";
@@ -49,7 +50,7 @@ a {
 }
 
 /**
- * NAVBAR
+ * Navbar
  */
 .navbar {
 	display: block;
@@ -59,38 +60,38 @@ a {
 .navbar a {
 	display: inline-block;
 	padding: 20px;
-	color: rgba(255,255,255,0.6);
+	color: rgba(255, 255, 255, 0.6);
 	font-size: 18px;
 }
 
 .navbar a:hover { color: #fff; }
 
-/* branding */
-.navbar .branding {
+/** Brand */
+.navbar .brand {
 	float: left;
 	text-transform: uppercase;
 }
 
-.navbar .branding h1 { margin: 0; }
+.navbar .brand h1 { margin: 0; }
 
-/* menu */
+/** Menu */
 .navbar .menu { float: right; }
 
-.navbar .menu li {
+.navbar .menu-item {
 	display: inline-block;
 	list-style: none;
 	vertical-align: top;
 }
 
-.navbar .github-link { padding: 13px 20px; }
+.navbar .menu-item .github-link { padding: 13px 20px; }
 
 /**
- * PANELS
+ * Panels
  */
 .panel {
 	display: block;
 	background-color: #fff;
-	box-shadow: 0 2px 1px 1px rgba(0,0,0,0.05);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .panel-heading {
@@ -112,7 +113,7 @@ a {
 	font-size: 1.2em;
 	text-align: center;
 	line-height: 38px;
-	transition: all 0.12s ease;
+	transition: all 0.2s ease;
 }
 
 .panel-heading .btn-back:hover:after { background-color: rgba(197,211,226,0.3); }
@@ -146,7 +147,7 @@ a.list-group-item p { margin-top: 6px; }
 	font-size: 1.2em;
 }
 
-/* labels */
+/** Labels */
 .list-group-item .label {
 	position: absolute;
 	top: 20px;
@@ -161,7 +162,7 @@ a.list-group-item p { margin-top: 6px; }
 .list-group-item .label-danger { background-color: #E74C3C; }
 
 /**
- * ERROR PAGE
+ * Error page
  */
 .error-page  {
 	margin: 20% auto 0;
@@ -179,7 +180,7 @@ a.list-group-item p { margin-top: 6px; }
 .error-title { font-size: 40px; }
 
 /**
- * MEDIA QUERIES
+ * Media queries
  */
 @media ( max-width: 740px ) {
 	.column { width: 100%; }

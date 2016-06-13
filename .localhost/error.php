@@ -15,12 +15,10 @@ $error = array(
 	503 => 'Service Unavailable',
 	507 => 'Insufficient Storage',
 	508 => 'Loop Detected',
-	444 => 'No Response',
-	499 => 'Client Closed Request'
 );
 
-$status  = $_SERVER['REDIRECT_STATUS'];
-$title   = $error[ $status ];
+$status = $_SERVER['REDIRECT_STATUS'];
+$title = $error[ $status ];
 
 require_once( 'config.php' );
 require_once( 'header.php' );
