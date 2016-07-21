@@ -55,7 +55,11 @@ DirectoryIndex index.php index.html /.index.php
 ErrorDocument 404 /.localhost/404.php
 ```
 
-### 3. On browser
+### 3. Update permissions
+
+Execute [this commands](https://gist.github.com/andergtk/6c60c5a32b52c3e6880b70dd8f8c2a76/edit) and change the path **/var/www** to your localhost root directory.
+
+### 4. On browser
 
 Open the [localhost](http://localhost) link and click on the gear button to set
 up with your preferences.
