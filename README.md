@@ -35,7 +35,7 @@ and extract the files to the same folder.
 
 See a sample for [Nginx](.localhost/sample-nginx.conf) or for [Apache](.localhost/sample-apache.conf).
 
-For **Nginx** da configuration file should have this lines:
+For **Nginx** the configuration file should have this lines:
 
 ```
 index index.php index.html /.index.php;
