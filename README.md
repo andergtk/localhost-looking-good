@@ -24,7 +24,9 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 
 Clone the repository into localhost root directory:
 
-> git clone https://github.com/andergtk/localhost-looking-good.git
+```
+git clone https://github.com/andergtk/localhost-looking-good.git
+```
 
 Or [download a ZIP](https://github.com/andergtk/localhost-looking-good/archive/master.zip)
 and extract the files to the same folder.
@@ -64,4 +66,4 @@ Any suggestion or improvement are welcome.
 
 ## License
 
-[GPL v3](LICENSE).
+[GPL v3](LICENSE)
