@@ -1,5 +1,5 @@
 body {
-  background-color: #FAFAFA;
+  background-color: #f1f1f1;
 }
 
 /** Navbar */
@@ -28,9 +28,10 @@ body {
  */
 .card {
   overflow: hidden;
+  margin-top: 1em;
   border: 0;
   border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 }
 
 .card-header {
