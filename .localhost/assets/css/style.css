@@ -1,0 +1,122 @@
+body {
+  background-color: #FAFAFA;
+}
+
+/** Navbar */
+.navbar {
+  background-color: #27CBC0;
+}
+
+.navbar .navbar-brand {
+  color: rgba(255, 255, 255, .6);
+  font-weight: bold;
+}
+
+.navbar .nav .nav-item {
+  margin-left: 1.5em;
+}
+
+.navbar .icon {
+  display: inline-block;
+  margin: -.275em 0 -1em;
+  font-size: 1.75em;
+}
+
+
+/**
+ * Card
+ */
+.card {
+  overflow: hidden;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+}
+
+.card-header {
+  padding: 1.25em 1.25em;
+  background-color: #fff;
+}
+
+.card-header .title {
+  display: inline-block;
+  margin: .3em 0;
+  color: #2C3A49;
+  font-size: 1.25em;
+}
+
+.card-header .btn-go-back {
+  background-color: #ECF0F1;
+  margin-right: .3em;
+  padding: 0 .3em;
+  background-color: transparent;
+  border-radius: 2px;
+  color: #27CBC0;
+  font-size: 1.375em;
+  vertical-align: top;
+}
+
+
+/** List Group */
+.card .list-group-item {
+  border: 0;
+  border-top: 1px solid #ddd;
+  border-radius: 0 !important;
+}
+
+.card .list-group-item:first-child {
+  border: 0;
+}
+
+.card .list-group-item.empty {
+  color: #BCCAD9;
+  text-align: center;
+}
+
+.card .list-group-item.is-dir {
+  color: #27CBC0;
+  font-weight: bold;
+}
+
+.card .list-group-item.is-dir .icon {
+  float: right;
+  color: #BCCAD9;
+}
+
+.card .list-group-item.is-file {
+  color: #8C9AA9;
+}
+
+/** Sites */
+.card .sites .filename {
+  display: block;
+  color: #27CBC0;
+  font-weight: bold;
+}
+
+.card .sites .url {
+  color: #BCCAD9;
+}
+
+.card .sites .status {
+  position: absolute;
+  padding-right: 1.5em;
+  top: 1.5em;
+  right: 1.5em;
+  bottom: 1.5em;
+  background-color: #C5D3E2;
+  border-radius: 2px;
+}
+
+.card .sites .status-success {
+  background-color: #2ECC71;
+}
+
+.card .sites .status-danger {
+  background-color: #E74C3C;
+}
+
+/** Modal */
+.modal .nav-tabs {
+  margin-bottom: 1em;
+}

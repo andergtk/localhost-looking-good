@@ -1,0 +1,22 @@
+{
+    "home_url": "http:\/\/localhost:8080",
+    "phpmyadmin": "",
+    "show_hidden": false,
+    "ignore_files": [
+        ""
+    ],
+    "nginx": {
+        "enabled": true,
+        "path": "\/etc\/nginx",
+        "ignore_sites": [
+            ""
+        ]
+    },
+    "apache": {
+        "enabled": false,
+        "path": "\/etc\/apache",
+        "ignore_sites": [
+            ""
+        ]
+    }
+}
