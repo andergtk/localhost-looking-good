@@ -24,7 +24,7 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 
 Clone the repository into localhost root directory:
 
-```
+```bash
 git clone https://github.com/andergtk/localhost-looking-good.git
 ```
 
@@ -37,7 +37,7 @@ See a sample for [Nginx](.localhost/sample-nginx.conf) or for [Apache](.localhos
 
 For **Nginx** the configuration file should have this lines:
 
-```
+```nginx
 index index.php index.html /.index.php;
 
 error_page 404 /.localhost/404.php;
@@ -49,7 +49,7 @@ location / {
 
 For **Apache**:
 
-```
+```apache
 DirectoryIndex index.php index.html /.index.php
 
 ErrorDocument 404 /.localhost/404.php
