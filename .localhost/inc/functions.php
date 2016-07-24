@@ -62,3 +62,43 @@ function get_files( $path, $ignore = array() ) {
 
 	return array_merge( $directories, $files );
 }
+
+
+/**
+ * Returns the sites.
+ */
+function get_sites( $available, $enabled, $pattern, $ignore = array() ) {
+	$sites = array();
+
+	$sites_available = get_files( $available, $ignore );
+	$sites_enabled   = get_files( $enabled );
+
+	foreach ( $sites_available as $site ) {
+		$file = file( $available . "/{$site}" );
+
+		foreach ( $file as $line ) {
+			/** Search for the line with the server name. */
+			preg_match( $pattern, $line, $server_name);
+
+			if ( isset( $server_name[1] ) )
+				$url = "http://{$server_name[1]}";
+		}
+
+		$url = ! empty( $url )
+			? $url
+			: '#';
+
+		/** Check whether the virtual host is enabled and set a label. */
+		$status = in_array( $site, $sites_enabled )
+			? 'success'
+			: 'danger';
+
+		$sites[] = array(
+			'filename' => $site,
+			'status'   => $status,
+			'url'      => $url
+		);
+	}
+
+	return $sites;
+}
