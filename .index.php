@@ -12,21 +12,21 @@ $subdir = empty( $_SERVER['REQUEST_URI'] )
 $files = get_files( PATH . $subdir, $settings['ignore_files'] );
 
 if ( $settings['nginx']['enabled'] ) {
-	$nginx_sites_available = get_files(
+	$nginx_sites = get_sites(
 		$settings['nginx']['path'] . '/sites-available',
+		$settings['nginx']['path'] . '/sites-enabled',
+		"/^\s*server_name\s+(.+);/",
 		$settings['nginx']['ignore_sites']
 	);
-
-	$nginx_sites_enabled = get_files( $settings['nginx']['path'] . '/sites-enabled' );
 }
 
 if ( $settings['apache']['enabled'] ) {
-	$apache_sites_available = get_files(
+	$apache_sites = get_sites(
 		$settings['apache']['path'] . '/sites-available',
+		$settings['apache']['path'] . '/sites-enabled',
+		"/^\s*ServerName\s+(.+)/",
 		$settings['apache']['ignore_sites']
 	);
-
-	$apache_sites_enabled = get_files( $settings['apache']['path'] . '/sites-enabled' );
 }
 
 
@@ -80,40 +80,14 @@ require_once '.localhost/layout/header.php';
 						</div><!-- .card-header -->
 
 						<div class="list-group sites">
-							<?php if ( empty( $nginx_sites_available ) ) : ?>
-								<span class="list-group-item">No sites</span>
+							<?php if ( empty( $nginx_sites ) ) : ?>
+								<span class="list-group-item empty">No sites</span>
 							<?php else : ?>
-								<?php foreach ( $nginx_sites_available as $site ) : ?>
-									<?php
-
-									/** Reads entire file into an array. */
-									$site_file = file( $settings['nginx']['path'] . "/sites-available/{$site}" );
-									foreach ( $site_file as $line ) {
-
-										/** Search for the line with the ServerName. */
-										preg_match( "/server_name\s+(.*);\n/", $line, $server_name);
-
-										if ( isset( $server_name[1] ) ) {
-											$url = "http://{$server_name[1]}";
-											break;
-										}
-									}
-
-									/** If there is no server_name, set a common URL. */
-									$url = isset( $url )
-										? $url
-										: home_url( "/{$site}" );
-
-									/** Check whether the virtual host is enabled and set set a label. */
-									$status = in_array( $site, $nginx_sites_enabled )
-										? 'success'
-										: 'danger';
-
-									?>
-									<a class="list-group-item" href="<?= $url; ?>">
-										<span class="status status-<?= $status ?>"></span>
-										<span class="filename"><?= $site; ?></span>
-										<span class="url"><?= $url; ?></span>
+								<?php foreach ( $nginx_sites as $site ) : ?>
+									<a class="list-group-item" href="<?= $site['url']; ?>">
+										<span class="status status-<?= $site['status']; ?>"></span>
+										<span class="filename"><?= $site['filename']; ?></span>
+										<span class="url"><?= '#' === $site['url'] ? 'Server name not found' : $site['url']; ?></span>
 									</a>
 								<?php endforeach; ?>
 							<?php endif; ?>
@@ -130,39 +104,14 @@ require_once '.localhost/layout/header.php';
 						</div><!-- .card-header -->
 
 						<div class="list-group sites">
-							<?php if ( empty( $apache_sites_available ) ) : ?>
-								<span class="list-group-item">No sites</span>
+							<?php if ( empty( $apache_sites ) ) : ?>
+								<span class="list-group-item empty">No sites</span>
 							<?php else : ?>
-								<?php foreach ( $apache_sites_available as $site ) : ?>
-									<?php
-
-									/** Reads entire file into an array. */
-									$site_file = file( $settings['apache']['path'] . "/sites-available/{$site}" );
-									foreach ( $site_file as $line ) {
-
-										/** Search for the line with the ServerName. */
-										preg_match( "/ServerName\s+(.*)\n/", $line, $server_name);
-
-										if ( isset( $server_name[1] ) ) {
-											$url = "http://{$server_name[1]}";
-											break;
-										}
-									}
-
-									/** If there is no server_name, set a common URL. */
-									$url = isset( $url )
-										? $url
-										: home_url( "/{$site}" );
-
-									/** Check whether the virtual host is enabled and set set a label. */
-									$status = in_array( $site, $apache_sites_enabled )
-										? 'success'
-										: 'danger';
-
-									?>
-									<a class="list-group-item" href="<?= $url; ?>">
-										<span class="text"><?= $site; ?></span>
-										<span class="status status-<?= $status ?>"></span>
+								<?php foreach ( $apache_sites as $site ) : ?>
+									<a class="list-group-item" href="<?= $site['url']; ?>">
+										<span class="status status-<?= $site['status']; ?>"></span>
+										<span class="filename"><?= $site['filename']; ?></span>
+										<span class="url"><?= '#' === $site['url'] ? 'Server name not found' : $site['url']; ?></span>
 									</a>
 								<?php endforeach; ?>
 							<?php endif; ?>
