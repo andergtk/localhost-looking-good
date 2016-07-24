@@ -23,7 +23,7 @@ $settings_default = array(
 
 	'apache' => array(
 		'enabled'      => false,
-		'path'         => '/etc/apache',
+		'path'         => '/etc/apache2',
 		'ignore_sites' => array()
 	)
 );
