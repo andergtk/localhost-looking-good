@@ -1,8 +1,10 @@
 *
 
-!.localhost/
-
-!.gitignore
-!.index.php
 !LICENSE
 !README.md
+!.index.php
+!.gitignore
+
+!.localhost/
+!.localhost/*
+.localhost/settings.json
