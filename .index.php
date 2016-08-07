@@ -54,7 +54,7 @@ require_once '.localhost/layout/header.php';
 					<span class="list-group-item empty">Empty</span>
 				<?php else : ?>
 					<?php foreach ( $files as $file ) : ?>
-						<?php if ( is_dir( $file ) ) : ?>
+						<?php if ( is_dir( PATH . $subdir . $file ) ) : ?>
 							<a class="list-group-item is-dir" href="<?= home_url( $subdir . $file ); ?>">
 								<span class="text"><?php echo $file; ?></span>
 								<i class="icon ion-android-arrow-forward"></i>
