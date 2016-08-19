@@ -33,7 +33,7 @@ and extract the files to the same folder.
 
 ### 2. Set up a Virtual Host
 
-See a sample for [Nginx](.localhost/sample-nginx.conf) or for [Apache](.localhost/sample-apache.conf).
+See a sample for [Nginx](.localhost/sample-nginx.conf) or [Apache](.localhost/sample-apache.conf).
 
 For **Nginx** the configuration file should have this lines:
 
