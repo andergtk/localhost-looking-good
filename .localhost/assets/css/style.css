@@ -148,12 +148,12 @@ label {
 }
 
 .card .list-group-item.empty {
-  color: #BCCAD9;
+  color: #BCCAD9 !important;
   text-align: center;
 }
 
 .card .list-group-item.is-file {
-  color: #8C9AA9;
+  color: #8C9AA9 !important;
 }
 
 .card .list-group-item.is-dir {
