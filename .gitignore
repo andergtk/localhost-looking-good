@@ -2,10 +2,9 @@
 
 !.gitignore
 
-!LICENSE
 !README.md
 !.index.php
 
 !.localhost/
-!.localhost/*
+!.localhost/**
 .localhost/settings.json
