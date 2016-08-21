@@ -12,7 +12,7 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 + Show the Virtual Hosts status.
 + Display the subdirectories, that don't have a index file, looking good.
 + Display custom 404 page.
-+ 9 theme options to let the localhost so you.
++ Theme options to let the localhost so you.
 
 ## Supported
 
@@ -76,3 +76,5 @@ sudo find /var/www -type f -exec chmod 664 {} +
 
 Open the localhost page and click on the gear button to set up with your
 preferences.
+
+### Done!
