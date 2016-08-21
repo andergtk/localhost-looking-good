@@ -12,6 +12,7 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 + Show the Virtual Hosts status.
 + Display the subdirectories, that don't have a index file, looking good.
 + Display custom 404 page.
++ 9 theme options to let the localhost so you.
 
 ## Supported
 
@@ -57,17 +58,21 @@ ErrorDocument 404 /.localhost/404.php
 
 ### 3. Update permissions
 
-Execute [this commands](https://gist.github.com/andergtk/6c60c5a32b52c3e6880b70dd8f8c2a76) changing the path `/var/www` to your localhost root directory.
+Execute the following commands in terminal, changing the path `/var/www` to your
+localhost root directory.
+
+For directories:
+
+```bash
+sudo find /var/www -type d -exec chmod 775 {} +
+```
+
+For files:
+```bash
+sudo find /var/www -type f -exec chmod 664 {} +
+```
 
 ### 4. On browser
 
-Open the [localhost](http://localhost) link and click on the gear button to set
-up with your preferences.
-
-## Contributing
-
-Any suggestion or improvement are welcome.
-
-## License
-
-[GPL v3](LICENSE)
+Open the localhost page and click on the gear button to set up with your
+preferences.
