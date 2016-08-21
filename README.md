@@ -11,8 +11,8 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 + Display the localhost projects looking good.
 + Show the Virtual Hosts status.
 + Display the subdirectories, that don't have a index file, looking good.
-+ Display custom 404 page.
 + Theme options to let the localhost so you.
++ TODO: Display custom 404 page.
 
 ## Supported
 
