@@ -1,0 +1,44 @@
+a {
+  color: #9B59B6;
+}
+
+a:focus,
+a:hover {
+  color: #8E44AD;
+}
+
+.btn-primary {
+  background-color: #9B59B6;
+  border-color: #9B59B6;
+}
+
+.btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:active:hover,
+.btn-primary:active:focus {
+  background-color: #8E44AD;
+  border-color: #8E44AD;
+}
+
+.navbar {
+  background-color: #9B59B6;
+}
+
+.card-header .btn-go-back {
+  color: #9B59B6;
+}
+
+.card-header .btn-go-back:focus,
+.card-header .btn-go-back:hover {
+  color: #8E44AD;
+}
+
+.card .list-group-item {
+  color: #9B59B6;
+}
+
+.card .list-group-item:focus,
+.card .list-group-item:hover {
+  color: #8E44AD;
+}

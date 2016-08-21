@@ -1,0 +1,44 @@
+a {
+  color: #E74C3C;
+}
+
+a:focus,
+a:hover {
+  color: #C0392B;
+}
+
+.btn-primary {
+  background-color: #E74C3C;
+  border-color: #E74C3C;
+}
+
+.btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:active:hover,
+.btn-primary:active:focus {
+  background-color: #C0392B;
+  border-color: #C0392B;
+}
+
+.navbar {
+  background-color: #E74C3C;
+}
+
+.card-header .btn-go-back {
+  color: #E74C3C;
+}
+
+.card-header .btn-go-back:focus,
+.card-header .btn-go-back:hover {
+  color: #C0392B;
+}
+
+.card .list-group-item {
+  color: #E74C3C;
+}
+
+.card .list-group-item:focus,
+.card .list-group-item:hover {
+  color: #C0392B;
+}

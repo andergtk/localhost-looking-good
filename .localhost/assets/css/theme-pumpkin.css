@@ -1,0 +1,44 @@
+a {
+  color: #F39C12;
+}
+
+a:focus,
+a:hover {
+  color: #F1892D;
+}
+
+.btn-primary {
+  background-color: #F39C12;
+  border-color: #F39C12;
+}
+
+.btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:active:hover,
+.btn-primary:active:focus {
+  background-color: #F1892D;
+  border-color: #F1892D;
+}
+
+.navbar {
+  background-color: #F39C12;
+}
+
+.card-header .btn-go-back {
+  color: #F39C12;
+}
+
+.card-header .btn-go-back:focus,
+.card-header .btn-go-back:hover {
+  color: #F1892D;
+}
+
+.card .list-group-item {
+  color: #F39C12;
+}
+
+.card .list-group-item:focus,
+.card .list-group-item:hover {
+  color: #F1892D;
+}

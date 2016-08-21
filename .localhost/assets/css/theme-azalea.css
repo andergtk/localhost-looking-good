@@ -1,0 +1,44 @@
+a {
+  color: #EA4C88;
+}
+
+a:focus,
+a:hover {
+  color: #CA2C68;
+}
+
+.btn-primary {
+  background-color: #EA4C88;
+  border-color: #EA4C88;
+}
+
+.btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:active:hover,
+.btn-primary:active:focus {
+  background-color: #CA2C68;
+  border-color: #CA2C68;
+}
+
+.navbar {
+  background-color: #EA4C88;
+}
+
+.card-header .btn-go-back {
+  color: #EA4C88;
+}
+
+.card-header .btn-go-back:focus,
+.card-header .btn-go-back:hover {
+  color: #CA2C68;
+}
+
+.card .list-group-item {
+  color: #EA4C88;
+}
+
+.card .list-group-item:focus,
+.card .list-group-item:hover {
+  color: #CA2C68;
+}
