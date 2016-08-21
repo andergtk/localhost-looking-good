@@ -1,9 +1,10 @@
 *
 
+!.gitignore
+
 !LICENSE
 !README.md
 !.index.php
-!.gitignore
 
 !.localhost/
 !.localhost/*
