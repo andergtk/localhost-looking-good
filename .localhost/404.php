@@ -15,4 +15,4 @@ require_once 'layout/header.php';
 <?php
 
 require_once 'layout/settings.php';
-require_once 'layout/header.php';
+require_once 'layout/footer.php';
