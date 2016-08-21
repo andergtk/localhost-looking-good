@@ -102,3 +102,21 @@ function get_sites( $available, $enabled, $pattern, $ignore = array() ) {
 
 	return $sites;
 }
+
+
+/**
+ * Returns the theme options values.
+ */
+function theme_options() {
+	return array(
+		'pomegranate'   => 'Pomegranate',
+		'pumpkin'       => 'Pumpkin',
+		'sunflower'     => 'Sunflower',
+		'emerald'       => 'Emerald',
+		'default'       => 'Default',
+		'peter-river'   => 'Peter River',
+		'azalea'        => 'Azalea',
+		'amethyst'      => 'Amethyst',
+		'midnight-blue' => 'Midnight Blue'
+	);
+}

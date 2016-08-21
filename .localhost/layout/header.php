@@ -8,6 +8,9 @@
 		<link rel="stylesheet" href="<?= home_url( '/.localhost/assets/css/bootstrap.min.css' ); ?>">
 		<link rel="stylesheet" href="<?= home_url( '/.localhost/assets/css/ionicons.min.css' ); ?>">
 		<link rel="stylesheet" href="<?= home_url( '/.localhost/assets/css/style.css' ); ?>">
+		<?php if ( $settings['theme_option'] !== 'default' && in_array( $settings['theme_option'], array_flip( theme_options() ) ) ) : ?>
+			<link rel="stylesheet" href="<?= home_url( "/.localhost/assets/css/theme-{$settings['theme_option']}.css" ); ?>">
+		<?php endif; ?>
 	</head>
 	<body>
 		<nav class="navbar navbar-static-top navbar-dark bg-inverse m-b-1">
@@ -17,7 +20,7 @@
 				<ul class="nav navbar-nav pull-xs-right">
 					<?php if ( ! empty( $settings['phpmyadmin'] ) ) : ?>
 						<li class="nav-item">
-							<a class="nav-link" href="<?= home_url( $settings['phpmyadmin'] ); ?>">PhpMyAdmin</a>
+							<a class="nav-link" href="<?= home_url( $settings['phpmyadmin'] ); ?>">phpMyAdmin</a>
 						</li>
 					<?php endif; ?>
 

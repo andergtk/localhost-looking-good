@@ -14,6 +14,7 @@ $settings_default = array(
 	'phpmyadmin'   => '',
 	'show_hidden'  => false,
 	'ignore_files' => array(),
+	'theme_option' => 'default',
 
 	'nginx' => array(
 		'enabled'      => false,
@@ -60,6 +61,10 @@ if ( ! empty( $_POST['settings'] ) && is_array( $_POST['settings'] ) ) {
 	$settings['ignore_files'] = isset( $new['ignore_files'] )
 		? explode( "\n", str_replace( "\r", '', $new['ignore_files'] ) )
 		: $settings['ignore_files'];
+
+	$settings['theme_option'] = ! empty( $new['theme_option'] ) && in_array( $new['theme_option'], array_flip( theme_options() ) )
+		? $new['theme_option']
+		: 'default';
 
 
 	$settings['nginx']['enabled'] = isset( $new['nginx']['enabled'] )
