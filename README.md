@@ -77,4 +77,4 @@ sudo find /var/www -type f -exec chmod 664 {} +
 Open the localhost page and click on the gear button to set up with your
 preferences.
 
-### Done!
+### 5. Done!
