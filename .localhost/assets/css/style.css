@@ -27,6 +27,7 @@ label {
   color: #6C7A89;
 }
 
+
 /**
  * Buttons
  */
@@ -66,6 +67,7 @@ label {
 .form-control:focus {
   border-color: #aaa;
 }
+
 
 /**
  * Navbar
@@ -286,4 +288,25 @@ label {
 
 .theme-option[data-value="midnight-blue"] {
   background-color: #34495e;
+}
+
+
+/**
+ * Error page
+ */
+.error-page {
+  margin-top: 20%;
+  text-align: center;
+}
+
+.error-page .status {
+  color: #8C9AA9;
+  font-size: 7em;
+  font-weight: bold;
+}
+
+.error-page .message {
+  margin-top: 1em;
+  color: #8C9AA9;
+  font-size: 1.5em;
 }
