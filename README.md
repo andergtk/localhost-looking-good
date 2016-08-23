@@ -65,7 +65,7 @@ Execute the following line in terminal, changing the path `/var/www` to your
 localhost root directory.
 
 ```bash
-sudo find /var/www -type d -exec chmod 775 {} + &&  sudo find /var/www -type f -exec chmod 664 {} +
+sudo find /var/www -type d -exec chmod 775 {} + && sudo find /var/www -type f -exec chmod 664 {} +
 ```
 
 ### 4. On browser
