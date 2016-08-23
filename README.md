@@ -80,6 +80,8 @@ preferences.
 
 ### 5. Done!
 
+Any questions or suggestions please contact us.
+
 ## License
 
 [MIT License](LICENSE)
