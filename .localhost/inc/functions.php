@@ -35,12 +35,9 @@ function get_files( $path, $ignore = array() ) {
 	if ( ! file_exists( $path ) )
 		return array();
 
-	$files       = array();
 	$directories = array();
-
-	$pattern = $settings['show_hidden']
-		? '{,.}*'
-		: '*';
+	$files       = array();
+	$pattern     = $settings['show_hidden'] ? '{,.}*' : '*';
 
 	foreach ( glob( trailingslashit( $path ) . $pattern, GLOB_BRACE ) as $file_path ) {
 		$file_name = basename( $file_path );
@@ -57,8 +54,8 @@ function get_files( $path, $ignore = array() ) {
 		}
 	}
 
-	sort( $files );
 	sort( $directories );
+	sort( $files );
 
 	return array_merge( $directories, $files );
 }
@@ -67,31 +64,26 @@ function get_files( $path, $ignore = array() ) {
 /**
  * Returns the sites.
  */
-function get_sites( $available, $enabled, $pattern, $ignore = array() ) {
+function get_sites( $availables_path, $enableds_path, $pattern, $ignore = array() ) {
 	$sites = array();
 
-	$sites_available = get_files( $available, $ignore );
-	$sites_enabled   = get_files( $enabled );
+	$available_sites = get_files( $availables_path, $ignore );
+	$enabled_sites   = get_files( $enableds_path );
 
-	foreach ( $sites_available as $site ) {
-		$file = file( $available . "/{$site}" );
+	foreach ( $available_sites as $site ) {
+		$file = file( $availables_path . "/{$site}" );
 
 		foreach ( $file as $line ) {
-			/** Search for the line with the server name. */
 			preg_match( $pattern, $line, $server_name);
 
-			if ( isset( $server_name[1] ) )
+			if ( isset( $server_name[1] ) ) {
 				$url = "http://{$server_name[1]}";
+				break;
+			}
 		}
 
-		$url = ! empty( $url )
-			? $url
-			: '#';
-
-		/** Check whether the virtual host is enabled and set a label. */
-		$status = in_array( $site, $sites_enabled )
-			? 'success'
-			: 'danger';
+		$url = ! empty( $url ) ? $url : '#';
+		$status = in_array( $site, $enabled_sites ) ? 'success' : 'danger';
 
 		$sites[] = array(
 			'filename' => $site,
@@ -107,7 +99,7 @@ function get_sites( $available, $enabled, $pattern, $ignore = array() ) {
 /**
  * Returns the theme options values.
  */
-function theme_options() {
+function get_theme_options() {
 	return array(
 		'pomegranate'   => 'Pomegranate',
 		'pumpkin'       => 'Pumpkin',

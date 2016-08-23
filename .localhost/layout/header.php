@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="<?= home_url( '/.localhost/assets/css/bootstrap.min.css' ); ?>">
 		<link rel="stylesheet" href="<?= home_url( '/.localhost/assets/css/ionicons.min.css' ); ?>">
 		<link rel="stylesheet" href="<?= home_url( '/.localhost/assets/css/style.css' ); ?>">
-		<?php if ( $settings['theme_option'] !== 'default' && in_array( $settings['theme_option'], array_flip( theme_options() ) ) ) : ?>
+		<?php if ( $settings['theme_option'] !== 'default' && in_array( $settings['theme_option'], array_flip( get_theme_options() ) ) ) : ?>
 			<link rel="stylesheet" href="<?= home_url( "/.localhost/assets/css/theme-{$settings['theme_option']}.css" ); ?>">
 		<?php endif; ?>
 	</head>

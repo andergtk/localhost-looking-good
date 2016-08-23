@@ -30,14 +30,14 @@
 							<fieldset class="form-group">
 								<label>Theme options</label>
 								<div class="theme-options">
-									<?php foreach( theme_options() as $theme_slug => $theme_name ) : ?>
-										<div class="theme-option <?= $settings['theme_option'] === $theme_slug ? 'active' : ''; ?>" data-value="<?= $theme_slug; ?>" title="<?=  $theme_name; ?>"></div>
+									<?php foreach( get_theme_options() as $theme_slug => $theme_name ) : ?>
+										<div class="theme-option <?= $settings['theme_option'] === $theme_slug ? 'active' : ''; ?>" data-value="<?= $theme_slug; ?>" title="<?= $theme_name; ?>"></div>
 									<?php endforeach; ?>
 								</div>
 
 								<select class="themes-list" name="settings[theme_option]" style="visibility: hidden; position: absolute;">
-									<?php foreach ( theme_options() as $theme_slug => $theme_name ) : ?>
-										<option value="<?= $theme_slug; ?>" <?= $settings['theme_option'] === $theme_slug ? 'selected="selected"' : ''; ?>><?=  $theme_name; ?></option>
+									<?php foreach ( get_theme_options() as $theme_slug => $theme_name ) : ?>
+										<option value="<?= $theme_slug; ?>" <?= $settings['theme_option'] === $theme_slug ? 'selected="selected"' : ''; ?>></option>
 									<?php endforeach; ?>
 								</select>
 							</fieldset>
@@ -45,19 +45,13 @@
 							<fieldset class="form-group">
 								<label for="home_url">Home URL</label>
 								<input id="home_url" class="form-control" type="text" name="settings[home_url]" value="<?= $settings['home_url']; ?>">
-								<small class="text-muted">e.g: http://localhost</small>
+								<small class="text-muted">E.g: http://localhost</small>
 							</fieldset>
 
 							<fieldset class="form-group">
 								<label for="phpmyadmin">Path to phpMyAdmin</label>
 								<input id="phpmyadmin" class="form-control" type="text" name="settings[phpmyadmin]" value="<?= $settings['phpmyadmin']; ?>">
-								<small class="text-muted">e.g: /phpmyadmin</small>
-							</fieldset>
-
-							<fieldset class="form-group">
-								<label for="ignore_files">Files to ignore</label>
-								<textarea id="ignore_files" class="form-control" rows="4" name="settings[ignore_files]"><?= implode( "\n", $settings['ignore_files'] ); ?></textarea>
-								<small class="text-muted">Put one file name per line</small>
+								<small class="text-muted">With initial slash, e.g: /phpmyadmin</small>
 							</fieldset>
 
 							<fieldset class="checkbox">
@@ -65,6 +59,12 @@
 									<input type="checkbox" name="settings[show_hidden]" <?= $settings['show_hidden'] ? 'checked' : ''; ?>>
 									Show hidden files
 								</label>
+							</fieldset>
+
+							<fieldset class="form-group">
+								<label for="ignore_files">Files to ignore</label>
+								<textarea id="ignore_files" class="form-control" rows="4" name="settings[ignore_files]"><?= implode( "\n", $settings['ignore_files'] ); ?></textarea>
+								<small class="text-muted">Put one file name per line</small>
 							</fieldset>
 						</div>
 

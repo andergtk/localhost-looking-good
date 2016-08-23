@@ -7,8 +7,8 @@ require_once PATH . '/.localhost/lib/FlashMessages.php';
 
 $msg = new \Plasticbrain\FlashMessages\FlashMessages();
 
-$settings = array();
-$settings_file = PATH . '/.localhost/settings.json';
+$settings         = array();
+$settings_file    = PATH . '/.localhost/settings.json';
 $settings_default = array(
 	'home_url'     => "http://{$_SERVER['HTTP_HOST']}",
 	'phpmyadmin'   => '',
@@ -43,33 +43,34 @@ if ( file_exists( $settings_file ) ) {
 }
 
 
+if ( ! in_array( $settings['theme_option'], array_flip( get_theme_options() ) ) ) {
+	$settings['theme_option'] = $settings_default['theme_option'];
+}
+
+
 if ( ! empty( $_POST['settings'] ) && is_array( $_POST['settings'] ) ) {
 	$new =& $_POST['settings'];
 
 	$settings['home_url'] = isset( $new['home_url'] )
 		? untrailingslashit( $new['home_url'] )
-		: $settings['home_url'];
+		: untrailingslashit( $settings['home_url'] );
 
 	$settings['phpmyadmin'] = isset( $new['phpmyadmin'] )
 		? $new['phpmyadmin']
 		: $settings['phpmyadmin'];
 
-	$settings['show_hidden'] = isset( $new['show_hidden'] )
-		? true
-		: false;
+	$settings['show_hidden'] = isset( $new['show_hidden'] ) ? true : false;
 
 	$settings['ignore_files'] = isset( $new['ignore_files'] )
 		? explode( "\n", str_replace( "\r", '', $new['ignore_files'] ) )
 		: $settings['ignore_files'];
 
-	$settings['theme_option'] = ! empty( $new['theme_option'] ) && in_array( $new['theme_option'], array_flip( theme_options() ) )
+	$settings['theme_option'] = isset( $new['theme_option'] ) && in_array( $new['theme_option'], array_flip( get_theme_options() ) )
 		? $new['theme_option']
 		: 'default';
 
 
-	$settings['nginx']['enabled'] = isset( $new['nginx']['enabled'] )
-		? true
-		: false;
+	$settings['nginx']['enabled'] = isset( $new['nginx']['enabled'] ) ? true : false;
 
 	$settings['nginx']['path'] = isset( $new['nginx']['path'] )
 		? untrailingslashit( $new['nginx']['path'] )
@@ -80,9 +81,7 @@ if ( ! empty( $_POST['settings'] ) && is_array( $_POST['settings'] ) ) {
 		: $settings['nginx']['ignore_sites'];
 
 
-	$settings['apache']['enabled'] = isset( $new['apache']['enabled'] )
-		? true
-		: false;
+	$settings['apache']['enabled'] = isset( $new['apache']['enabled'] ) ? true : false;
 
 	$settings['apache']['path'] = isset( $new['apache']['path'] )
 		? untrailingslashit( $new['apache']['path'] )
@@ -95,34 +94,37 @@ if ( ! empty( $_POST['settings'] ) && is_array( $_POST['settings'] ) ) {
 
 	if ( empty( $settings['home_url'] ) ) {
 		$settings['home_url'] = $settings_default['home_url'];
-		$msg->warning( 'The Home URL cannot be empty. A default value was set.' );
+		$msg->warning( 'The Home URL can not be empty. A default value was set.' );
 	}
+
 
 	if ( $settings['nginx']['enabled'] ) {
 		if ( empty( $settings['nginx']['path'] ) ) {
 			$settings['nginx']['enabled'] = false;
-			$msg->error( 'The Nginx path is empty.' );
+			$msg->error( 'The Nginx path can not be empty.' );
 		} elseif ( ! file_exists( $settings['nginx']['path'] ) ) {
 			$settings['nginx']['enabled'] = false;
 			$msg->error( "The Nginx path \"{$settings['nginx']['path']}\" does not exists." );
 		}
 	}
 
+
 	if ( $settings['apache']['enabled'] ) {
 		if ( empty( $settings['apache']['path'] ) ) {
 			$settings['apache']['enabled'] = false;
-			$msg->error( 'The Apache path is empty.' );
+			$msg->error( 'The Apache path can not be empty.' );
 		} elseif ( ! file_exists( $settings['apache']['path'] ) ) {
 			$settings['apache']['enabled'] = false;
 			$msg->error( "The Apache path \"{$settings['apache']['path']}\" does not exists." );
 		}
 	}
 
+
 	if ( ! $msg->hasErrors() )
 		$msg->success( 'The changes have been saved.' );
 
 	if ( ! file_put_contents( $settings_file, json_encode( $settings, JSON_PRETTY_PRINT ) ) )
-		exit( 'Error to save settings in the file.' );
+		exit( 'Error to save settings in the file. Check the file access permissions.' );
 
 	header( 'Refresh: 0' );
 	exit();

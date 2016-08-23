@@ -4,10 +4,9 @@ define( 'PATH', realpath( '.' ) );
 
 require_once '.localhost/inc/init.php';
 
-
-$subdir = empty( $_SERVER['REQUEST_URI'] )
-	? '/'
-	: trailingslashit( urldecode( trim( $_SERVER['REQUEST_URI'] ) ) );
+$subdir = ! empty( $_SERVER['REQUEST_URI'] )
+	? trailingslashit( urldecode( trim( $_SERVER['REQUEST_URI'] ) ) )
+	: '/';
 
 $files = get_files( PATH . $subdir, $settings['ignore_files'] );
 
@@ -28,7 +27,6 @@ if ( $settings['apache']['enabled'] ) {
 		$settings['apache']['ignore_sites']
 	);
 }
-
 
 require_once '.localhost/layout/header.php';
 
@@ -66,8 +64,8 @@ require_once '.localhost/layout/header.php';
 						<?php endif; ?>
 					<?php endforeach; ?>
 				<?php endif; ?>
-			</div>
-		</div>
+			</div><!-- .list-group -->
+		</div><!-- .card -->
 	</div>
 
 	<div class="col-md-6">
@@ -91,8 +89,8 @@ require_once '.localhost/layout/header.php';
 									</a>
 								<?php endforeach; ?>
 							<?php endif; ?>
-						</div>
-					</div>
+						</div><!-- .list-group -->
+					</div><!-- .card -->
 				</div>
 			<?php endif; ?>
 
@@ -115,8 +113,8 @@ require_once '.localhost/layout/header.php';
 									</a>
 								<?php endforeach; ?>
 							<?php endif; ?>
-						</div>
-					</div>
+						</div><!-- .list-group -->
+					</div><!-- .card -->
 				</div>
 			<?php endif; ?>
 		</div>
