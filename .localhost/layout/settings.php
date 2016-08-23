@@ -45,13 +45,14 @@
 							<fieldset class="form-group">
 								<label for="home_url">Home URL</label>
 								<input id="home_url" class="form-control" type="text" name="settings[home_url]" value="<?= $settings['home_url']; ?>">
-								<small class="text-muted">E.g: http://localhost</small>
 							</fieldset>
 
 							<fieldset class="form-group">
 								<label for="phpmyadmin">Path to phpMyAdmin</label>
-								<input id="phpmyadmin" class="form-control" type="text" name="settings[phpmyadmin]" value="<?= $settings['phpmyadmin']; ?>">
-								<small class="text-muted">With initial slash, e.g: /phpmyadmin</small>
+								<div class="input-group">
+									<span class="input-group-addon"><?= home_url( '/' ); ?></span>
+									<input id="phpmyadmin" class="form-control" type="text" name="settings[phpmyadmin]" value="<?= $settings['phpmyadmin']; ?>">
+								</div>
 							</fieldset>
 
 							<fieldset class="checkbox">

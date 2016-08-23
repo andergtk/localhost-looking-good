@@ -20,7 +20,7 @@
 				<ul class="nav navbar-nav pull-xs-right">
 					<?php if ( ! empty( $settings['phpmyadmin'] ) ) : ?>
 						<li class="nav-item">
-							<a class="nav-link" href="<?= home_url( $settings['phpmyadmin'] ); ?>">phpMyAdmin</a>
+							<a class="nav-link" href="<?= home_url( "/{$settings['phpmyadmin']}" ); ?>">phpMyAdmin</a>
 						</li>
 					<?php endif; ?>
 
