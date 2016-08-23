@@ -79,3 +79,7 @@ Open the localhost page and click on the gear button to set up with your
 preferences.
 
 ### 5. Done!
+
+## License
+
+[MIT License](LICENSE)
