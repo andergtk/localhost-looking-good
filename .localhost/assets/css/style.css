@@ -81,15 +81,16 @@ label {
   font-weight: bold;
 }
 
-.navbar .nav .nav-item {
-  margin-left: 1.5em;
+.navbar .nav-link {
+  padding-right: .375em;
+  padding-left: .375em;
 }
 
 .navbar .icon {
   display: inline-block;
-  margin: -.275em 0 -1em;
-  padding: 0 .2em;
-  font-size: 1.75em;
+  margin: -.375em 0 -1em;
+  font-size: 1.65em;
+  vertical-align: text-top;
 }
 
 
@@ -231,7 +232,7 @@ label {
   display: inline-block;
   margin: .5%;
   padding-bottom: 9.75%;
-  width: 10.115%;
+  width: 10.1111%;
   border: 1px solid #fff;
   border-radius: 3px;
   transition: all .15s ease;
@@ -250,7 +251,7 @@ label {
 }
 
 .theme-option.active {
-  transform: scale(1.15);
+  transform: scale(1.175);
 }
 
 
@@ -263,15 +264,15 @@ label {
 }
 
 .theme-option[data-value="peter-river"] {
-  background-color: #22A7F0;
+  background-color: #3498DB;
 }
 
 .theme-option[data-value="sunflower"] {
-  background-color: #FFCF4B;
+  background-color: #F9BF3B;
 }
 
 .theme-option[data-value="pumpkin"] {
-  background-color: #F1892D;
+  background-color: #F39C12;
 }
 
 .theme-option[data-value="pomegranate"] {
@@ -287,7 +288,7 @@ label {
 }
 
 .theme-option[data-value="midnight-blue"] {
-  background-color: #34495e;
+  background-color: #34495E;
 }
 
 
