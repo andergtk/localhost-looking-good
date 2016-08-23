@@ -16,8 +16,9 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 
 ## Supported
 
-+ Linux based O.S.
 + Nginx and Apache web servers.
++ Linux based O.S and Mac OS.
++ Partial support for Windows (just shows the projects).
 
 ## Install
 
