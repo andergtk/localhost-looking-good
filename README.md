@@ -57,20 +57,15 @@ DirectoryIndex index.php index.html /.index.php
 ErrorDocument 404 /.localhost/404.php
 ```
 
-### 3. Update permissions
+### 3. Update permissions (optional)
 
-Execute the following commands in terminal, changing the path `/var/www` to your
+Just if you have problems to save settings.
+
+Execute the following line in terminal, changing the path `/var/www` to your
 localhost root directory.
 
-For directories:
-
 ```bash
-sudo find /var/www -type d -exec chmod 775 {} +
-```
-
-For files:
-```bash
-sudo find /var/www -type f -exec chmod 664 {} +
+sudo find /var/www -type d -exec chmod 775 {} + &&  sudo find /var/www -type f -exec chmod 664 {} +
 ```
 
 ### 4. On browser
