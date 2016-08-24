@@ -27,10 +27,14 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 Clone the repository into localhost root directory:
 
 ```bash
-git clone https://github.com/andergtk/localhost-looking-good.git
+# Change directory
+cd /var/www
+
+# Clone into
+git clone https://github.com/andergtk/localhost-looking-good.git .
 ```
 
-Or [download a ZIP](https://github.com/andergtk/localhost-looking-good/archive/master.zip)
+Or [Download a ZIP](https://github.com/andergtk/localhost-looking-good/archive/master.zip)
 and extract the files to the same folder.
 
 ### 2. Set up a Virtual Host
