@@ -2,6 +2,8 @@
 
 session_start();
 
+header( 'Content-Type: text/html; charset=UTF-8' );
+
 require_once 'functions.php';
 require_once PATH . '/.localhost/lib/FlashMessages.php';
 
