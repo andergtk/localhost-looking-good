@@ -222,6 +222,10 @@ label {
   margin-bottom: 1.5em;
 }
 
+.modal textarea {
+  font-family: monospace;
+}
+
 .modal .nav-tabs .nav-link {
   border-radius: 2px 2px 0 0;
 }

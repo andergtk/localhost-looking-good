@@ -29,7 +29,7 @@ function home_url( $path = '' ) {
 /**
  * Returns the files in a directory.
  */
-function get_files( $path, $ignore = array() ) {
+function get_files( $path, $ignore = array(), $from_sites = false ) {
 	global $settings;
 
 	if ( ! file_exists( $path ) )
@@ -45,13 +45,19 @@ function get_files( $path, $ignore = array() ) {
 		if ( preg_match( "/^\.{1,2}$/", $file_name) )
 			continue;
 
-		if ( ! in_array( $file_name, $ignore ) ) {
-			if ( is_dir( $file_path ) ) {
-				$directories[] = $file_name;
-			} else {
-				$files[] = $file_name;
-			}
+		foreach ( $ignore as $pattern ) {
+			if ( empty( $pattern ) )
+				continue;
+			elseif ( $from_sites && fnmatch( $pattern, $file_name ) )
+				continue 2;
+			elseif ( fnmatch( '/' . $pattern, SUBDIR . $file_name ) )
+				continue 2;
 		}
+
+		if ( is_dir( $file_path ) )
+			$directories[] = $file_name;
+		else
+			$files[] = $file_name;
 	}
 
 	sort( $directories );
@@ -67,8 +73,8 @@ function get_files( $path, $ignore = array() ) {
 function get_sites( $availables_path, $enableds_path, $pattern, $ignore = array() ) {
 	$sites = array();
 
-	$available_sites = get_files( $availables_path, $ignore );
-	$enabled_sites   = get_files( $enableds_path );
+	$available_sites = get_files( $availables_path, $ignore, true );
+	$enabled_sites   = get_files( $enableds_path, array(), true );
 
 	foreach ( $available_sites as $site ) {
 		$file = file( $availables_path . "/{$site}" );
@@ -111,4 +117,19 @@ function get_theme_options() {
 		'amethyst'      => 'Amethyst',
 		'midnight-blue' => 'Midnight Blue'
 	);
+}
+
+
+/**
+ * http://php.net/manual/en/function.fnmatch.php
+ */
+if ( ! function_exists( 'fnmatch' ) ) {
+	function fnmatch( $pattern, $string ) {
+		$delimiters = array(
+			'\*' => '.*',
+			'\?' => '.'
+		);
+
+		return preg_match( "#^" . strtr( preg_quote( $pattern, '#' ), $delimiter ) . "$#i", $string );
+	}
 }

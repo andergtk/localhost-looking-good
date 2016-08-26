@@ -4,11 +4,7 @@ define( 'PATH', realpath( '.' ) );
 
 require_once '.localhost/inc/init.php';
 
-$subdir = ! empty( $_SERVER['REQUEST_URI'] )
-	? trailingslashit( urldecode( trim( $_SERVER['REQUEST_URI'] ) ) )
-	: '/';
-
-$files = get_files( PATH . $subdir, $settings['ignore_files'] );
+$files = get_files( PATH . SUBDIR, $settings['ignore_files'] );
 
 if ( $settings['nginx']['enabled'] ) {
 	$nginx_sites = get_sites(
@@ -36,12 +32,12 @@ require_once '.localhost/layout/header.php';
 	<div class="<?= $settings['nginx']['enabled'] || $settings['apache']['enabled'] ? 'col-md-6' : 'col-md-12'; ?>">
 		<div class="card">
 			<div class="card-header">
-				<?php if ( '/' !== $subdir ) : ?>
-					<a class="btn btn-default btn-go-back" href="<?= home_url( dirname( $subdir ) ); ?>" title="Go Back">
+				<?php if ( '/' !== SUBDIR ) : ?>
+					<a class="btn btn-default btn-go-back" href="<?= home_url( dirname( SUBDIR ) ); ?>" title="Go Back">
 						<i class="icon ion-android-arrow-back"></i>
 					</a>
 
-					<h3 class="title"><?= basename( $subdir ); ?></h3>
+					<h3 class="title"><?= basename( SUBDIR ); ?></h3>
 				<?php else : ?>
 					<h3 class="title">Projects</h3>
 				<?php endif; ?>
@@ -52,13 +48,13 @@ require_once '.localhost/layout/header.php';
 					<span class="list-group-item empty">Empty</span>
 				<?php else : ?>
 					<?php foreach ( $files as $file ) : ?>
-						<?php if ( is_dir( PATH . $subdir . $file ) ) : ?>
-							<a class="list-group-item is-dir" href="<?= home_url( $subdir . $file ); ?>">
+						<?php if ( is_dir( PATH . SUBDIR . $file ) ) : ?>
+							<a class="list-group-item is-dir" href="<?= home_url( SUBDIR . $file ); ?>">
 								<span class="text"><?php echo $file; ?></span>
 								<i class="icon ion-android-arrow-forward"></i>
 							</a>
 						<?php else : ?>
-							<a class="list-group-item is-file" href="<?= home_url( $subdir . $file ); ?>">
+							<a class="list-group-item is-file" href="<?= home_url( SUBDIR . $file ); ?>">
 								<span class="text"><?php echo $file; ?></span>
 							</a>
 						<?php endif; ?>

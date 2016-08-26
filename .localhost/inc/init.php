@@ -7,6 +7,8 @@ header( 'Content-Type: text/html; charset=UTF-8' );
 require_once 'functions.php';
 require_once PATH . '/.localhost/lib/FlashMessages.php';
 
+define( 'SUBDIR', ! empty( $_SERVER['REQUEST_URI'] ) ? trailingslashit( urldecode( trim( $_SERVER['REQUEST_URI'] ) ) ) : '/' );
+
 $msg = new \Plasticbrain\FlashMessages\FlashMessages();
 
 $settings         = array();

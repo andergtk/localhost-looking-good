@@ -65,7 +65,7 @@
 							<fieldset class="form-group">
 								<label for="ignore_files">Files to ignore</label>
 								<textarea id="ignore_files" class="form-control" rows="4" name="settings[ignore_files]"><?= implode( "\n", $settings['ignore_files'] ); ?></textarea>
-								<small class="text-muted">Put one file name per line</small>
+								<small class="text-muted">Put one match to the file name per line. Use the wildcard character (*) to match anything.</small>
 							</fieldset>
 						</div>
 
