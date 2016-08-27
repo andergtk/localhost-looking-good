@@ -304,14 +304,23 @@ label {
   text-align: center;
 }
 
-.error-page .status {
+.error-page .status,
+.error-page .title,
+.error-page .message {
   color: #8C9AA9;
+}
+
+.error-page .status {
   font-size: 7em;
+  font-weight: bold;
+}
+
+.error-page .title {
+  font-size: 3em;
   font-weight: bold;
 }
 
 .error-page .message {
   margin-top: 1em;
-  color: #8C9AA9;
   font-size: 1.5em;
 }
