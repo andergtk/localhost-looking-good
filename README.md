@@ -8,11 +8,11 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 
 ## Features
 
-+ Display the localhost projects looking good.
-+ Show the Virtual Hosts status.
-+ Display the subdirectories, that don't have a index file, looking good.
++ Displays the localhost projects looking good.
++ Shows the Virtual Hosts status.
++ Displays the subdirectories, that don't have an index file, looking good.
 + Theme options to let the localhost so you.
-+ Display custom 404 page.
++ Shows some custom errors pages.
 
 ## Supported
 
@@ -39,27 +39,10 @@ and extract the files to the same folder.
 
 ### 2. Set up a Virtual Host
 
-See a sample for [Nginx](.localhost/sample-nginx.conf) or [Apache](.localhost/sample-apache.conf).
+See the sample of how should be the file in your web server: [Nginx](.localhost/sample-nginx.conf)
+or [Apache2](.localhost/sample-apache.conf).
 
-For **Nginx** the configuration file should have this lines:
-
-```nginx
-index index.php index.html /.index.php;
-
-error_page 404 /.localhost/404.php;
-
-location / {
-  autoindex on;
-}
-```
-
-For **Apache**:
-
-```apache
-DirectoryIndex index.php index.html /.index.php
-
-ErrorDocument 404 /.localhost/404.php
-```
+The required settings is: index file, root directory and the custom errors pages.
 
 ### 3. Update permissions (optional)
 
@@ -74,7 +57,7 @@ sudo find /var/www -type d -exec chmod 775 {} + && sudo find /var/www -type f -e
 
 ### 4. On browser
 
-Open the localhost page and click on the gear button to set up with your
+Open the localhost page and click on the gear button for set up with your
 preferences.
 
 ### 5. Done!
