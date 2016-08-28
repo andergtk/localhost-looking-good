@@ -74,6 +74,7 @@ label {
  */
 .navbar {
   background-color: #27CBC0;
+  border-radius: 0;
 }
 
 .navbar .navbar-brand {
