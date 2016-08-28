@@ -12,13 +12,15 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 + Shows the Virtual Hosts status.
 + Displays the subdirectories, that don't have an index file, looking good.
 + Theme options to let the localhost so you.
-+ Shows some custom errors pages.
++ Shows some custom errors pages (like 403, 404 and 500).
 
 ## Supported
 
-+ Nginx and Apache web servers.
-+ Linux based O.S and Mac OS.
-+ Partial support for Windows (just shows the projects).
++ **Nginx** and **Apache** web servers (on any other server may not work as
+  expected).
++ Linux and Unix based O.S.
++ Partial support for Windows (just shows the projects, without listing Virtual
+  Hosts).
 
 ## Install
 
@@ -34,15 +36,18 @@ cd /var/www
 git clone https://github.com/andergtk/localhost-looking-good.git .
 ```
 
-Or [Download a ZIP](https://github.com/andergtk/localhost-looking-good/archive/master.zip)
+Or [download](https://github.com/andergtk/localhost-looking-good/archive/master.zip)
 and extract the files to the same folder.
 
 ### 2. Set up a Virtual Host
 
-See the sample of how should be the file in your web server: [Nginx](.localhost/sample-nginx.conf)
-or [Apache2](.localhost/sample-apache.conf).
+See the sample of how should be the file in your web server: [**Nginx**](.localhost/sample-nginx.conf)
+or [**Apache**](.localhost/sample-apache.conf).
 
-The required settings is: index file, root directory and the custom errors pages.
+The required settings are:
++ 1 - Root directory.
++ 2 - Index file (`/.index.php` as last option to work in subdirectories).
++ 3 - Custom errors pages.
 
 ### 3. Update permissions (optional)
 
@@ -57,7 +62,7 @@ sudo find /var/www -type d -exec chmod 775 {} + && sudo find /var/www -type f -e
 
 ### 4. On browser
 
-Open the localhost page and click on the gear button for set up with your
+Open the localhost page and click on the gear button to set with your
 preferences.
 
 ### 5. Done!
