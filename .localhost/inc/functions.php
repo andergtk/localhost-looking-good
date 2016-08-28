@@ -50,7 +50,7 @@ function get_files( $path, $ignore = array(), $from_sites = false ) {
 				continue;
 			elseif ( $from_sites && fnmatch( $pattern, $file_name ) )
 				continue 2;
-			elseif ( fnmatch( '/' . $pattern, SUBDIR . $file_name ) )
+			elseif ( fnmatch( "/{$pattern}", SUBDIR . $file_name ) )
 				continue 2;
 		}
 
@@ -121,9 +121,12 @@ function get_theme_options() {
 
 
 /**
- * http://php.net/manual/en/function.fnmatch.php
+ * @see http://php.net/manual/en/function.fnmatch.php
  */
 if ( ! function_exists( 'fnmatch' ) ) {
+	/**
+	 * Match filename against a pattern.
+	 */
 	function fnmatch( $pattern, $string ) {
 		$delimiters = array(
 			'\*' => '.*',
