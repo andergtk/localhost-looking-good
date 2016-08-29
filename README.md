@@ -45,6 +45,7 @@ See the sample of how should be the file in your web server: [**Nginx**](.localh
 or [**Apache**](.localhost/sample-apache.conf).
 
 The required settings are:
+
 1. Root directory.
 2. Index file (`/.index.php` as last option).
 3. Custom errors pages.
