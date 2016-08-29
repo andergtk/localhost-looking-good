@@ -47,7 +47,7 @@ or [**Apache**](.localhost/sample-apache.conf).
 The required settings are:
 
 1. Root directory.
-2. Index file (`/.index.php` as last option).
+2. Index file.
 3. Custom errors pages.
 
 ### 3. Update permissions (optional)
