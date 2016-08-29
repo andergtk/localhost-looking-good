@@ -8,18 +8,18 @@ Localhost with a looking good and showing the status of the Virtual Hosts.
 
 ## Features
 
-+ Displays the localhost projects looking good.
-+ Shows the Virtual Hosts status.
-+ Displays the subdirectories, that don't have an index file, looking good.
++ Display the localhost projects looking good.
++ Show the status of the Virtual Hosts.
++ Display the subdirectories, that don't have an index file, looking good.
 + Theme options to let the localhost so you.
-+ Shows some custom errors pages (like 403, 404 and 500).
++ Show some custom errors pages (like 403, 404 and 500).
 
 ## Supported
 
 + **Nginx** and **Apache** web servers (on any other server may not work as
   expected).
 + Linux and Unix based O.S.
-+ Partial support for Windows (just shows the projects, without listing Virtual
++ Partial support for Windows (just show the projects, without listing Virtual
   Hosts).
 
 ## Install
@@ -45,9 +45,9 @@ See the sample of how should be the file in your web server: [**Nginx**](.localh
 or [**Apache**](.localhost/sample-apache.conf).
 
 The required settings are:
-+ 1 - Root directory.
-+ 2 - Index file (`/.index.php` as last option to work in subdirectories).
-+ 3 - Custom errors pages.
+1. Root directory.
+2. Index file (`/.index.php` as last option).
+3. Custom errors pages.
 
 ### 3. Update permissions (optional)
 
